@@ -1,6 +1,16 @@
 import './App.css';
+import React, {useState} from 'react';
+
 
 function App() {
+
+  const [nomeOuCpf, setNomeOuCpf] = useState('');
+  const [senha, setSenha] = useState('');
+
+  function handleSubmit() {
+    alert("Login inválido")
+  }
+
   return(
     <body>
       <header id = 'headerhigh' >
@@ -25,9 +35,33 @@ function App() {
           Se você já é cadastrado, basta usar seu e-mail e senha.<br/>Se este for seu primeiro acesso, será necessário ter em mãos seu CPF ou CNPJ e RENAVAM.
           </p>
           <div id = "caixa1">
-            <div id = "login">
+            <div id = "loginput">
               <div>
               <h2>Já sou cadastrado</h2>
+              <form onSubmit={handleSubmit}>
+                <div id = "divlogin">
+                  Login:
+                  <input id="login" type='text' value={nomeOuCpf} onChange={e => setNomeOuCpf(e.target.value)}/>
+                </div>
+                <div id = "divlogin">
+                  <div>
+                    <span id = 'span1'>
+                      Senha:
+                    </span>
+                    <span id = 'span2'>
+                      Esqueci minha senha
+                    </span>
+                  </div>
+                  <input id="login" type='password' value={senha} onChange={f => setSenha(f.target.value)}/>
+                </div>
+              </form>
+              </div>
+            </div>
+          </div>
+          <div id="caixa2">
+            <div id="cadastro">
+              <div>
+                <h2>É meu primeiro acesso</h2>
               </div>
             </div>
           </div>
