@@ -1,6 +1,6 @@
 import './App.css';
-import React, {useState} from 'react';
-
+import React, {useState, useRef} from 'react';
+import Modal from './components/modal esqueci senha/modal.js';
 
 function App() {
 
@@ -10,6 +10,30 @@ function App() {
   function handleSubmit() {
     alert("Login inválido")
   }
+
+  /*function esqueciSenha() { //Colocar modal aqui para aparecer um alerta de senha esquecida.
+    alert("fodané")
+  }*/
+
+  const [dropdown, setDropdown] = useState(""); 
+  const modalRef = useRef(null);
+
+  const toggleDropdown = () => {
+    console.log("show");
+    //se clicar no botão, modal aparece
+    setDropdown("show");
+    document.body.addEventListener("click", closeDropdown);
+  }
+
+  const closeDropdown = event => {
+    event.stopPropagation(); //impede de executar listeners dos filhos
+    const contain = modalRef.current.contains(event.target);
+    if (!contain) { //se clicar fora do modal, ele DESaparece
+      console.log("hidden");
+      setDropdown("");
+      document.body.removeEventListener("click", closeDropdown);
+    }
+  };
 
   return(
     <body>
@@ -49,11 +73,15 @@ function App() {
                       Senha:
                     </span>
                     <span id = 'span2'>
+                      <a onClick={toggleDropdown}>
+                      <Modal className={dropdown} modalRef={modalRef}/>
                       Esqueci minha senha
+                      </a>
                     </span>
                   </div>
                   <input id="login" type='password' value={senha} onChange={f => setSenha(f.target.value)}/>
                 </div>
+                  <button id='botao' type='submit'>Entrar no sistema</button>
               </form>
               </div>
             </div>

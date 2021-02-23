@@ -90,6 +90,7 @@ span {
   padding-left: 15px;
   padding-right: 15px;
   box-sizing: border-box;
+  padding-bottom: 15px;
 }
 
 #loginput {
@@ -155,4 +156,30 @@ h2 {
   float: right;
   margin: 0px 0px;
   color: #676a6c;
+}
+
+a {
+  cursor: pointer;
+  color: darkblue;
+}
+
+#botao {
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  width: 100%;
+  color: gray;
+}
+
+.show{
+  display: block !important;
 }
