@@ -180,6 +180,9 @@ a {
   color: gray;
 }
 
+.show{
+  display: block !important;
+}
 
 
 
@@ -204,12 +207,9 @@ a {
 }
 
 .modal.modal-fade {
+  animation: fade-in 1s 1 linear;
   animation-fill-mode: forwards;
-  opacity: 1;
-	animation-name: fade-in;
-	animation-iteration-count: 1;
-	animation-timing-function: linear;
-	animation-duration: 1s;
+  opacity: 0;
 }
 
 .modal > .modal-overlay {
@@ -263,6 +263,7 @@ a {
 
 @keyframes fade-in {
   0% {
+    animation-timing-function: cubic-bezier(0.2242, 0.7499, 0.3142, 0.8148);
     opacity: 0;
   }
   100% {

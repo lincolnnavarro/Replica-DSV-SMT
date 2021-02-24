@@ -1,11 +1,13 @@
 import './App.css';
 import React, {useState, useRef} from 'react';
 import Modal from './components/modal esqueci senha/modal.js';
+import modal from './components/modal esqueci senha/modal.js';
 
 function App() {
 
   const [nomeOuCpf, setNomeOuCpf] = useState('');
   const [senha, setSenha] = useState('');
+  const modal = useRef(null)
 
   function handleSubmit() {
     alert("Login inválido")
@@ -15,31 +17,15 @@ function App() {
     alert("fodané")
   }*/
 
-  const [dropdown, setDropdown] = useState(""); 
-  const modalRef = useRef(null);
-
-  const toggleDropdown = () => {
-    console.log("show");
-    //se clicar no botão, modal aparece
-    setDropdown("show");
-    document.body.addEventListener("click", closeDropdown);
+  function abrirModal() {
+    modal.current.open()
   }
-
-  const closeDropdown = event => {
-    event.stopPropagation(); //impede de executar listeners dos filhos
-    const contain = modalRef.current.contains(event.target);
-    if (!contain) { //se clicar fora do modal, ele DESaparece
-      console.log("hidden");
-      setDropdown("");
-      document.body.removeEventListener("click", closeDropdown);
-    }
-  };
 
   return(
     <body>
       <header id = 'headerhigh' >
          <div id = 'logo'>
-         <img src="/components/images/PMSPT.png" alt="Logo Prefeitura" />
+         <img src="/components/images/PMSPT.png" />
         </div><p id = 'h1titulo' >
           DSV Digital
         </p>
@@ -73,10 +59,12 @@ function App() {
                       Senha:
                     </span>
                     <span id = 'span2'>
-                      <a onClick={toggleDropdown}>
-                      <Modal className={dropdown} modalRef={modalRef}/>
+                      <a onClick={abrirModal}>
                       Esqueci minha senha
                       </a>
+                      <Modal ref={modal}>
+                        Hello Barbie
+                      </Modal>
                     </span>
                   </div>
                   <input id="login" type='password' value={senha} onChange={f => setSenha(f.target.value)}/>
