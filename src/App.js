@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import Modal from './components/modal esqueci senha/modal.js';
 import modal from './components/modal esqueci senha/modal.js';
 
@@ -8,18 +8,20 @@ function App() {
   const [nomeOuCpf, setNomeOuCpf] = useState('');
   const [senha, setSenha] = useState('');
   const modal = useRef(null)
+  const [isOpen, setIsOpen] = useState(false);
+  const [cpf, setCpf] = useState("")
 
   function handleSubmit() {
     alert("Login inválido")
   }
 
-  /*function esqueciSenha() { //Colocar modal aqui para aparecer um alerta de senha esquecida.
-    alert("fodané")
+  /*function handleEnviar() {
+    alert("deu certo")
   }*/
 
-  function abrirModal() {
-    modal.current.open()
-  }
+  useEffect(() => {
+    console.log(isOpen)
+  }, [isOpen])
 
   return(
     <body>
@@ -59,12 +61,25 @@ function App() {
                       Senha:
                     </span>
                     <span id = 'span2'>
-                      <a onClick={abrirModal}>
+                      <a onClick={() => setIsOpen(true)}>
                       Esqueci minha senha
-                      </a>
-                      <Modal ref={modal}>
-                        Hello Barbie
-                      </Modal>
+                      </a> {isOpen && <Modal setIsOpen={setIsOpen}>
+                        <div>
+                          <div id='headermodal'>
+                            <p id='linha'>ESQUECI MINHA SENHA</p>
+                          </div>
+                          <div id='divmodal'>
+                          Informe seu CPF ou CNPJ para receber as instruções por e-mail.
+                          </div> 
+                          <form onSubmit={handleSubmit}>
+                          <div id="divmodal2">
+                            <input id='emailEsqueci' type='number' value={cpf} onChange={e => setCpf(e.target.value)} />
+                          </div>
+                          <div id="divmodal3">
+                            <button id='botaomodal' type='submit'>Enviar</button> 
+                          </div> </form>
+                        </div>
+                      </Modal>}
                     </span>
                   </div>
                   <input id="login" type='password' value={senha} onChange={f => setSenha(f.target.value)}/>

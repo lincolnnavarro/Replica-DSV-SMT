@@ -250,14 +250,12 @@ a {
   z-index: 2;
   position: relative;
   margin: 0 auto;
-  background-color: #303030;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  border-radius: 3px;
+  background-color: rgb(240, 240, 240);
   overflow-x: hidden;
   overflow-y: auto;
   max-height: 100%;
-  padding: 15px 20px;
-  color: #c3c0c0;
+  color: #676a6c;
+  width: 30%;
 }
 
 
@@ -268,4 +266,75 @@ a {
   100% {
     opacity: 1;
   }
+}
+
+#headermodal {
+  background-image: linear-gradient(0deg, #1d382a 25%, #000000 25%, #000000 50%, #1d382a 50%, #1d382a 75%, #000000 75%, #000000 100%);
+  background-size: 8.00px 8.00px;
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 15px;
+  color: white;
+  font-weight: bold;
+}
+
+#linha {
+  width: fit-content;
+}
+
+#divmodal {
+  font-size: 14px;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  font-weight: 500;
+}
+
+#emailEsqueci {
+  background-color: #FFF;
+  background-image: none;
+  border: 1px solid #e5e6e7;
+  border-radius: 1px;
+  color: inherit;
+  display: block;
+  padding: 6px 0px;
+  transition: border-color .15s ease-in-out 0s,box-shadow .15s ease-in-out 0s;
+  width: 100%;
+  height: 20px;
+}
+
+#divmodal2 {
+  font-size: 14px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  font-weight: 500;
+  border-bottom: 1px solid silver; 
+}
+
+#divmodal3 {
+  font-size: 14px;
+  padding: 15px;
+  font-weight: 500;
+  height:35px;
+}
+
+#botaomodal {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background-color: rgb(243, 173, 43);
+  color: white;
+  height: 35px;
+  float:right;
+  width: 70px;
 }

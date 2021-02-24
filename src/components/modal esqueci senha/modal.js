@@ -4,12 +4,9 @@ import './index.css'
 
 const modalElement = document.getElementById('modal-root')
 
-export function Modal({ children, fade = false, defaultOpened = false }, ref) {
-  const [isOpen, setIsOpen] = useState(defaultOpened)
+export function Modal({ children, fade = false, defaultOpened = false, setIsOpen }, ref) {
 
-  const close = useCallback(() => setIsOpen(false), [])
-
-  useImperativeHandle(ref, () => ({
+/* useImperativeHandle(ref, () => ({
     open: () => setIsOpen(true),
     close
   }), [close])
@@ -24,18 +21,15 @@ export function Modal({ children, fade = false, defaultOpened = false }, ref) {
       document.removeEventListener('keydown', handleEscape, false)
     }
   }, [handleEscape, isOpen])
-
-  return createPortal(
-    isOpen ? (
+*/
+  return (
       <div className={`modal ${fade ? '' : 'modal-fade'}`}>
-        <div className="modal-overlay" onClick={close} />
-        <span role="button" className="modal-close" aria-label="close" onClick={close}>
+        <div className="modal-overlay" onClick={() => setIsOpen(false)} />
+        <span role="button" className="modal-close" aria-label="close" onClick={() => setIsOpen(false)}>
           x
         </span>
         <div className="modal-body">{children}</div>
       </div>
-    ) : null,
-    modalElement
   )
 }
 
