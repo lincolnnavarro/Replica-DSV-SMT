@@ -117,8 +117,19 @@ function App() {
                 <div id='divCadastro'>
                   <input id="login" type='text' value={renavam} onChange={f => setRenavam(f.target.value)}/>
                 </div>
+                <div id='divbotao'>
+                  <button id='botao' type='submit'>Cadastrar</button>
+                </div>
               </div>
             </div>
+          </div>
+          <div id='divvideo'>
+            <p id='titulovideo'>
+              Entenda o processo de Indicação de Condutor
+            </p>
+            <figure>
+            < iframe width="425" height="349" src="https://www.youtube.com/embed/ZmMAjkFpvxs?wmode=opaque" frameborder="0" allowfullscreen=""></iframe>
+            </figure>
           </div>
         </div>
     </body>
@@ -126,3 +137,4 @@ function App() {
 }
 
 export default App;
+
