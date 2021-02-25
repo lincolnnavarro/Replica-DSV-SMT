@@ -120,26 +120,34 @@ h2 {
 #cadastro {
   float: left;
   width: 75%;
-  padding-left: 15px;
-  padding-right: 15px;
-  box-sizing: border-box;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 #login {
-  background-color: #FFF;
-    background-image: none;
-    border: 1px solid #e5e6e7;
-    border-radius: 1px;
-    color: inherit;
-    display: block;
-    padding: 6px 0px;
-    transition: border-color .15s ease-in-out 0s,box-shadow .15s ease-in-out 0s;
-    width: 100%;
-    height: 20px;
+  background-color: #FFF;    
+  width:100%;
+  background-image: none;
+  border: 1px solid #e5e6e7;
+  border-radius: 1px;
+  color: inherit;
+  padding: 6px;
+  transition: border-color .15s ease-in-out 0s,box-shadow .15s ease-in-out 0s;
+  height: 20px;
+  flex-shrink: 2;
+  display:flex;
+  flex-flow: column wrap;
+  align-items: stretch;
+}
+
+#divflex {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: stretch;
 }
 
 #divlogin {
-  font-size: 14px;
+  font-size: 13px;
   margin-top: 20px; 
   margin-bottom: 15px;
 }
@@ -332,4 +340,30 @@ a {
   height: 35px;
   float:right;
   width: 70px;
+}
+
+#pcadastro {
+  margin: 10px 0px;
+  font-size: 13px;
+}
+
+#cpfcnpj {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+#formCadastro {
+  margin: 20px 0px;
+}
+
+#divCadastro {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  flex-shrink: 2;
+}
+
+div {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: stretch;
 }

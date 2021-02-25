@@ -7,12 +7,22 @@ function App() {
 
   const [nomeOuCpf, setNomeOuCpf] = useState('');
   const [senha, setSenha] = useState('');
-  const modal = useRef(null)
+  const [cadastro, setCadastro] = useState('');
+  const [renavam, setRenavam] = useState('');
   const [isOpen, setIsOpen] = useState(false);
-  const [cpf, setCpf] = useState("")
+  const [cpf, setCpf] = useState("");
+  const [cpfCnpj, setCpfCnpj] = useState(false);
 
-  function handleSubmit() {
+  function handleSubmitLogin() {
     alert("Login inválido")
+  }
+
+  function handleSubmitCadastro() {
+    alert("Credenciais inválidas")
+  }
+
+  function handleSubmitEsqueci() {
+    alert("Email enviado")
   }
 
   /*function handleEnviar() {
@@ -50,7 +60,7 @@ function App() {
             <div id = "loginput">
               <div>
               <h2>Já sou cadastrado</h2>
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmitLogin}>
                 <div id = "divlogin">
                   Login:
                   <input id="login" type='text' value={nomeOuCpf} onChange={e => setNomeOuCpf(e.target.value)}/>
@@ -71,13 +81,14 @@ function App() {
                           <div id='divmodal'>
                           Informe seu CPF ou CNPJ para receber as instruções por e-mail.
                           </div> 
-                          <form onSubmit={handleSubmit}>
+                          <form onSubmit={handleSubmitEsqueci}>
                           <div id="divmodal2">
-                            <input id='emailEsqueci' type='number' value={cpf} onChange={e => setCpf(e.target.value)} />
+                            <input id='emailEsqueci' type='text' value={cpf} onChange={e => setCpf(e.target.value)} />
                           </div>
                           <div id="divmodal3">
                             <button id='botaomodal' type='submit'>Enviar</button> 
-                          </div> </form>
+                          </div> 
+                          </form>
                         </div>
                       </Modal>}
                     </span>
@@ -91,8 +102,21 @@ function App() {
           </div>
           <div id="caixa2">
             <div id="cadastro">
-              <div>
+              <div id='divflex'>
                 <h2>É meu primeiro acesso</h2>
+                <p id='pcadastro'>Informe o seu CPF ou CNPJ e Renavam válido referente ao seu documento.</p>
+                <form id='formCadastro' onSubmit={handleSubmitCadastro}>
+                  <input type='radio' id='cpfcnpj' name='cpfcnpj' value={() => setCpfCnpj(cpfCnpj = false)}/>
+                  <label id='cpfcnpj' for='cpfcnpj'>Pessoa Física</label> &nbsp;
+                  <input type='radio' id='cpfcnpj' name='cpfcnpj' value={() => setCpfCnpj(cpfCnpj = true)}/>
+                  <label id='cpfcnpj' for='cpfcnpj'>Pessoa Jurídica</label>
+                </form>
+                <div id='divCadastro'>
+                  <input id="login" type='text' value={cadastro} onChange={f => setCadastro(f.target.value)}/>
+                </div>
+                <div id='divCadastro'>
+                  <input id="login" type='text' value={renavam} onChange={f => setRenavam(f.target.value)}/>
+                </div>
               </div>
             </div>
           </div>
