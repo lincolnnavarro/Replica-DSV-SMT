@@ -1,7 +1,7 @@
 import './App.css';
 import React, {useState, useRef, useEffect} from 'react';
 import Modal from './components/modal esqueci senha/modal.js';
-import modal from './components/modal esqueci senha/modal.js';
+
 
 function App() {
 
