@@ -47,6 +47,7 @@ function App() {
       </header>
         <nav></nav>
         <div id = "corpo">
+          
           <p id = "texto1">
           O DSV DIGITAL é uma ferramenta desenvolvida pela Secretaria Municipal de Mobilidade e Transportes de São Paulo - 
           SMT, através do Departamento de Operação do Sistema Viário - DSV, para viabilizar o atendimento mais ágil aos 
@@ -63,7 +64,7 @@ function App() {
               <form onSubmit={handleSubmitLogin}>
                 <div id = "divlogin">
                   Login:
-                  <input id="login" type='text' value={nomeOuCpf} onChange={e => setNomeOuCpf(e.target.value)}/>
+                  <input id="login" type='text' value={nomeOuCpf} required placeholder="Digite seu email ou CPF/CNPJ" onChange={e => setNomeOuCpf(e.target.value)}/>
                 </div>
                 <div id = "divlogin">
                   <div>
@@ -83,7 +84,7 @@ function App() {
                           </div> 
                           <form onSubmit={handleSubmitEsqueci}>
                           <div id="divmodal2">
-                            <input id='emailEsqueci' type='text' value={cpf} onChange={e => setCpf(e.target.value)} />
+                            <input id='emailEsqueci' type='text' value={cpf} required placeholder="CPF ou CNPJ" onChange={e => setCpf(e.target.value)} />
                           </div>
                           <div id="divmodal3">
                             <button id='botaomodal' type='submit'>Enviar</button> 
@@ -93,7 +94,7 @@ function App() {
                       </Modal>}
                     </span>
                   </div>
-                  <input id="login" type='password' value={senha} onChange={f => setSenha(f.target.value)}/>
+                  <input id="login" type='password' value={senha} required placeholder="Digite sua senha" onChange={f => setSenha(f.target.value)}/>
                 </div>
                   <button id='botao' type='submit'>Entrar no sistema</button>
               </form>
@@ -112,10 +113,10 @@ function App() {
                   <label id='cpfcnpj' for='cpfcnpj'>Pessoa Jurídica</label>
                 </form>
                 <div id='divCadastro'>
-                  <input id="login" type='text' value={cadastro} onChange={f => setCadastro(f.target.value)}/>
+                  <input id="login" type='text' value={cadastro} required placeholder="CPF" onChange={f => setCadastro(f.target.value)}/>
                 </div>
                 <div id='divCadastro'>
-                  <input id="login" type='text' value={renavam} onChange={f => setRenavam(f.target.value)}/>
+                  <input id="login" type='text' value={renavam} required placeholder="RENAVAM" onChange={f => setRenavam(f.target.value)}/>
                 </div>
                 <div id='divbotao'>
                   <button id='botao' type='submit'>Cadastrar</button>
@@ -131,6 +132,18 @@ function App() {
             < iframe width="425" height="349" src="https://www.youtube.com/embed/ZmMAjkFpvxs?wmode=opaque" frameborder="0" allowfullscreen=""></iframe>
             </figure>
           </div>
+          <div>
+            <p id='pultimo'>
+            Dúvidas? Consulte o <a href='https://dsvdigital.prefeitura.sp.gov.br/dsv-digital-manual.pdf'>manual do usuário</a>
+            </p>
+          </div>
+        </div>
+        <small id='pequeno'> 
+        * Lavradas pelo Departamento de Operação do Sistema Viário - DSV.
+        </small> 
+        <div id='corpo2'>
+          <p id='final'>
+          <b>Secretaria Municipal de Mobilidade e Transportes</b> - Assessoria de Informática © SMT-INFO 2021</p>
         </div>
     </body>
   )

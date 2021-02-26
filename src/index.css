@@ -5,7 +5,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(240, 240, 240);
-
 }
 
 #headerhigh {
@@ -56,14 +55,14 @@ span {
 }
 
 #corpo {
-  display: block;
   background-color: #fff;
   border: 1px solid lightgray;
   border-radius: 2px;
   padding: 20px;
-  height: 1000px;
-  align-items: center;
+  display:inline-block;
 }
+
+
 
 #texto1 {
   text-align: center;
@@ -134,11 +133,15 @@ h2 {
   background-image: none;
   border: 1px solid #e5e6e7;
   border-radius: 1px;
-  color: inherit;
+  color: inherit  ;
   padding: 6px;
   transition: border-color .15s ease-in-out 0s,box-shadow .15s ease-in-out 0s;
   height: 20px;
   display:block;
+}
+
+::placeholder {
+  color:rgba(161, 161, 161, 0.749)
 }
 
 #divflex {
@@ -175,7 +178,7 @@ a {
 #botao {
   padding: 6px 12px;
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 1.42857143;
   text-align: center;
@@ -184,9 +187,11 @@ a {
   touch-action: manipulation;
   cursor: pointer;
   user-select: none;
-  border: 1px solid transparent;
+  background-color: rgb(243, 173, 43);
+  border: 1px solid white;
+  border-radius: 3px;
   width: 100%;
-  color: gray;
+  color: white;
 }
 
 .modal {
@@ -213,7 +218,7 @@ a {
 	animation-name: fade-in;
 	animation-iteration-count: 1;
 	animation-timing-function: linear;
-	animation-duration: 1s;
+	animation-duration: 200ms;
 }
 
 .modal > .modal-overlay {
@@ -368,6 +373,7 @@ a {
   margin-top: 25px;
   text-align: center;
   width:100%;
+  margin-bottom: 25px;
 }
 
 #titulovideo {
@@ -377,3 +383,38 @@ a {
   margin: 1px;
 }
 
+#pultimo {
+  float:left;
+  width: 100%;
+  text-align: center;
+  font-family: "Open Sans";
+  font-size: 30px;
+  font-weight: bold;
+  margin: 20px;
+}
+
+#pequeno {
+  margin-left:10px;
+  margin-bottom: 24px;
+  float: left;
+  font-size: 10px;
+}
+
+#corpo2 {
+  background-color: #fff;
+  border-top: 1px solid lightgray;
+  border-radius: 2px;
+  float: left;
+  width: 100%;
+}
+
+#final {
+  font-size: 13px;
+  float:left;
+  margin:12px;
+}
+
+#final2 {
+  font-size: 13px;
+  float:left;
+}
